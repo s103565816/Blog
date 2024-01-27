@@ -1,0 +1,40 @@
+﻿@model IEnumerable<PostViewModel>
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+<h2>All Post</h2>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Create New Post</a>
+</p>
+
+@* <div class="container-fluid">
+    @foreach (var item in Model)
+    {
+        <div class="container">
+            <h1>@Html.DisplayFor(modelItem => item.Title)</h1>
+            <p>@Html.DisplayFor(modelItem => item.ShortDescription)</p>
+            <p>@Html.DisplayFor(modelItem => item.DatePublished)</p>
+
+            <a>@Html.ActionLink("Details", "Details", new { Id=item.PostId })</a>
+        </div>
+
+        <hr />
+    }
+</div> *@
+
+<div class="container-fluid">
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("Details", "Post", new { Id=item.PostId })" style="text-decoration: none; color: black;">
+            <div class="container">
+                <h1>@Html.DisplayFor(modelItem => item.Title)</h1>
+                <p>@Html.DisplayFor(modelItem => item.ShortDescription)</p>
+                <p>@Html.DisplayFor(modelItem => item.DatePublished)</p>
+            </div>
+        </a>
+        <hr />
+    }
+</div>

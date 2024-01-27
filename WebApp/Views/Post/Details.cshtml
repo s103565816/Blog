@@ -1,0 +1,25 @@
+﻿@model PostViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PostId }) |
+    @Html.ActionLink("Delete", "Delete", new { id = Model.PostId }, new { onclick = "return confirm('Are you sure you want to delete this post?');" }) |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<br />
+
+<h1>@Html.DisplayFor(model => model.Title)</h1>
+<h4>@Html.DisplayFor(model => model.ShortDescription)</h4>
+
+<br />
+
+<p>Published date: @Html.DisplayFor(model => model.DatePublished)</p>
+
+<hr />
+
+
+<p>@Html.DisplayFor(model => model.PostContent)</p>
+

@@ -1,0 +1,34 @@
+﻿@model PostViewModel
+
+@{
+	ViewData["Title"] = "Edit";
+}
+
+<h2>Edit Post</h2>
+
+<div class="container">
+    <form method="post">
+        <div class="form-group">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" value="@Model.Title" id="title" placeholder="New title" name="title">
+        </div>
+
+        <br />
+
+        <div class="form-group">
+            <label for="shortdesc" class="form-label">Description</label>
+            <input type="text" class="form-control" value="@Model.ShortDescription" id="shortdesc" placeholder="New description" name="shortdesc">
+        </div>
+
+        <br />
+
+        <div class="form-group">
+            <label for="content" class="form-label">Content</label>
+            <textarea style="resize:vertical" class="form-control" id="content" placeholder="New content" name="content">@Model.PostContent</textarea>
+        </div>
+
+        <br />
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
